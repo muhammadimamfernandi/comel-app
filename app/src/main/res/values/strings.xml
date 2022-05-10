@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">comel-app</string>
+    <string name="header">COMEL App</string>
+    <string name="header_sub">Care of Your Mental Health</string>
+    <string name="have_account">Have an account?</string>
+    <string name="log_in">Log In</string>
+    <string name="log_in_underlined"><u>Log In</u></string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
 </resources>
