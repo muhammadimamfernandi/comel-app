@@ -33,5 +33,12 @@
         <action
             android:id="@+id/action_loginFragment_to_landingFragment"
             app:destination="@id/landingFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signOutFragment"
+            app:destination="@id/signOutFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/signOutFragment"
+        android:name="com.taskforce141.comelapp.ui.SignOutFragment"
+        android:label="SignOutFragment" />
 </navigation>
