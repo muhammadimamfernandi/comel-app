@@ -15,6 +15,9 @@
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_landing.xml" value="0.5" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_landing.xml" value="0.22826086956521738" />
+        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_signout.xml" value="0.22826086956521738" />
       </map>
     </option>
   </component>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "209805033752",
+    "project_id": "comel-app-972f6",
+    "storage_bucket": "comel-app-972f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209805033752:android:c74b1694a1473c0ccc5e6d",
+        "android_client_info": {
+          "package_name": "com.taskforce141.comelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209805033752-8cji12t0ncpqcnhjfv0fa9l92sicfak5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtJLaky_T8auRZ-STuLkk3mPOgSP5dwYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209805033752-8cji12t0ncpqcnhjfv0fa9l92sicfak5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
