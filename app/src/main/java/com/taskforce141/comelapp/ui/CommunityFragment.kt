@@ -30,6 +30,12 @@ class CommunityFragment : Fragment() {
             )
         }
 
+        binding.settingsNavbar.setOnClickListener{
+            it.findNavController().navigate(
+                R.id.action_communityFragment_to_settingsFragment
+            )
+        }
+
         binding.searchBar.clearFocus()
     }
 }
