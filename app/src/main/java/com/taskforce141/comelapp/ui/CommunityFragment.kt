@@ -7,32 +7,29 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.taskforce141.comelapp.R
-import com.taskforce141.comelapp.databinding.FragmentLoginBinding
+import com.taskforce141.comelapp.databinding.FragmentCommunityBinding
 
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
+class CommunityFragment : Fragment() {
+
+    private lateinit var binding: FragmentCommunityBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+        binding = FragmentCommunityBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.backButton.setOnClickListener{
+        binding.homeNavbar.setOnClickListener{
             it.findNavController().navigate(
-                R.id.action_loginFragment_to_landingFragment
+                R.id.action_communityFragment_to_homeFragment
             )
         }
 
-        binding.loginButton.setOnClickListener{
-            it.findNavController().navigate(
-                R.id.action_loginFragment_to_homeFragment
-            )
-        }
+        binding.searchBar.clearFocus()
     }
 }

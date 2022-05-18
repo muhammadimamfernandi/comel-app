@@ -11,4 +11,6 @@
     <color name="gold_light">#C8A78F</color>
     <color name="mid_grey">#65575F</color>
     <color name="light_blue">#B6E1FA</color>
+    <color name="light_grey">#E5E5E5</color>
+    <color name="grey">#C4C4C4</color>
 </resources>

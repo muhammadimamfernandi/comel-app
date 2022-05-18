@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/grey"
+            android:elevation="4dp"
+            android:orientation="horizontal"
+            app:itemIconTint="@color/black">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/friendsNavbar"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/friendsNavbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/custom_navbar_top"
+                    android:button="@drawable/null_radio"
+                    android:fontFamily="@font/comfortaa"
+                    android:paddingHorizontal="25dp"
+                    android:text="@string/friends"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/interestsNavbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/custom_navbar_top"
+                    android:button="@drawable/null_radio"
+                    android:fontFamily="@font/comfortaa"
+                    android:paddingHorizontal="25dp"
+                    android:text="@string/interests"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/groupNavbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/custom_navbar_top"
+                    android:button="@drawable/null_radio"
+                    android:fontFamily="@font/comfortaa"
+                    android:paddingHorizontal="25dp"
+                    android:text="@string/group"
+                    android:textSize="12sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/search_bar"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/your_friends"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/picture_placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/name_placeholder"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comfortaa"
+                            android:text="@string/username_placeholder"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/chatButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/chat_button"
+                        android:fontFamily="@font/comfortaa"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:text="@string/chat"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        app:backgroundTint="@color/black" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/top_border"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        app:itemIconTint="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RadioGroup
+            android:id="@+id/navbarGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/communityNavbar"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/homeNavbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/custom_bottom_navbar"
+                android:button="@drawable/null_radio"
+                android:drawableTop="@drawable/ic_home_page"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="@string/home"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/communityNavbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/custom_bottom_navbar"
+                android:button="@drawable/null_radio"
+                android:drawableTop="@drawable/ic_people"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="@string/community"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/therapyNavbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/custom_bottom_navbar"
+                android:button="@drawable/null_radio"
+                android:drawableTop="@drawable/ic_health"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="@string/therapy"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/settingsNavbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/custom_bottom_navbar"
+                android:button="@drawable/null_radio"
+                android:drawableTop="@drawable/ic_settings"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="@string/settings"
+                android:textSize="10sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>

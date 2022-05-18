@@ -29,6 +29,10 @@ class RegisterFragment : Fragment() {
             )
         }
 
-        binding
+        binding.registerButton.setOnClickListener{
+            it.findNavController().navigate(
+                R.id.action_registerFragment_to_homeFragment
+            )
+        }
     }
 }
