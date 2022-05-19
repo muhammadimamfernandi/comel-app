@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.taskforce141.comelapp.LoadingDialog
 import com.taskforce141.comelapp.R
@@ -85,12 +86,10 @@ class RegisterFragment : Fragment() {
                         requireActivity(), "Akun berhasil didaftarkan!",
                         Toast.LENGTH_SHORT
                     ).show()
-                    //open home temporary
-                    binding.registerButton.setOnClickListener{
-                        it.findNavController().navigate(
-                            R.id.action_registerFragment_to_homeFragment
-                        )
-                    }
+                    //open home
+                    findNavController().navigate(
+                        R.id.action_registerFragment_to_homeFragment
+                    )
             }
             .addOnFailureListener{send->
                 loading.isDismiss()

@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.taskforce141.comelapp.R
 import com.taskforce141.comelapp.databinding.FragmentLandingBinding
 
 class LandingFragment : Fragment() {
     private lateinit var binding: FragmentLandingBinding
+    //firebase auth
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +37,15 @@ class LandingFragment : Fragment() {
         binding.toLogin.setOnClickListener{
             it.findNavController().navigate(
                 R.id.action_landingFragment_to_loginFragment
+            )
+        }
+    }
+    private fun checkUser() {
+        val firebaseUser = auth.currentUser
+        if(firebaseUser != null){
+            // Temporary
+            findNavController().navigate(
+                R.id.action_landingFragment_to_homeFragment
             )
         }
     }

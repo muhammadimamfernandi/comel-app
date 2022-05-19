@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.taskforce141.comelapp.R
 import com.taskforce141.comelapp.databinding.FragmentSettingsBinding
@@ -51,7 +52,9 @@ class SettingsFragment : Fragment() {
             val email = firebaseUser.email
         }else{
             //user not logged in
-            startActivity(Intent(requireActivity(),LoginFragment::class.java))
+            findNavController().navigate(
+                R.id.action_settingsFragment_to_loginFragment
+            )
         }
     }
 

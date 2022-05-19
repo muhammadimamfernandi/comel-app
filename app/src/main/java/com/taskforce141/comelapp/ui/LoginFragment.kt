@@ -13,6 +13,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.taskforce141.comelapp.LoadingDialog
 import com.taskforce141.comelapp.R
@@ -70,33 +71,27 @@ class LoginFragment : Fragment() {
     }
 
     private fun firebaseLogin() {
-//        //check user is login or not
-//        checkUser()
         //loading dialog
         val loading = LoadingDialog(requireActivity())
         //start loading
         loading.startLoading()
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
+                //close loading
+                loading.isDismiss()
                 //get current user
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
+                findNavController().navigate(
+                    R.id.action_loginFragment_to_homeFragment
+                )
                 Toast.makeText(requireActivity(),"Selamat Bercurhat! ${email}",
                     Toast.LENGTH_SHORT).show()
-                startActivity(Intent(requireActivity(),HomeFragment::class.java))
             }
             .addOnFailureListener{ send ->
                 loading.isDismiss()
                 Toast.makeText(requireActivity(),"Pendaftaran gagal error : ${send.message}",
                     Toast.LENGTH_SHORT).show()
             }
-    }
-
-    private fun checkUser() {
-        val firebaseUser = firebaseAuth.currentUser
-        if(firebaseUser != null){
-            // Temporary
-            startActivity(Intent(requireActivity(),HomeFragment::class.java))
-        }
     }
 }
