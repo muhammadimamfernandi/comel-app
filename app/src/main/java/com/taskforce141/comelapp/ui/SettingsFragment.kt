@@ -30,7 +30,9 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.logoutBtn2.setOnClickListener{
             firebaseAuth.signOut()
-            checkUser()
+            findNavController().navigate(
+                R.id.action_settingsFragment_to_loginFragment
+            )
         }
         //navbar bottom
         binding.homeNavbar.setOnClickListener{

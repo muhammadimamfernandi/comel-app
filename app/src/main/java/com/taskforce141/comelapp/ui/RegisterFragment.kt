@@ -8,6 +8,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -23,11 +24,11 @@ class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
     //firebase auth
     private lateinit var auth: FirebaseAuth
-//    private var name = ""
-//    private var username = ""
+    private lateinit var gender : RadioGroup
+    private var name = ""
+    private var username = ""
     private var email = ""
     private var password = ""
-//    private var gender = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,17 +54,25 @@ class RegisterFragment : Fragment() {
     }
     private fun checkData() {
         //validate email and password
+        name = binding.nameTxt.text.toString().trim()
+        username = binding.usernameTxt.text.toString().trim()
         email = binding.emailTxt.text.toString().trim()
         password = binding.passwordTxt.text.toString().trim()
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            //invalid email format
-            binding.emailTxt.error = "Format Email anda tidak sesuai!"
-        }else if(TextUtils.isEmpty(password)){
-            //password isn't entered
-            binding.passwordTxt.error = "Harap masukkan password anda"
+        gender = binding.gender
+
+        if(TextUtils.isEmpty(name)){
+            binding.nameTxt.error = "Nama anda kosong"
+        }else if(TextUtils.isEmpty(username)){
+            binding.usernameTxt.error = "Username anda kosong"
+        }else if(TextUtils.isEmpty(email)){
+            binding.emailTxt.error = "Email anda kosong"
+        } else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            binding.emailTxt.error = "Format Email anda tidak sesuai"
         }else if(password.length < 6){
             //password length less than 6
             binding.passwordTxt.error = "Password harus 6 karakter atau lebih"
+        }else if(TextUtils.isEmpty(password)){
+            binding.passwordTxt.error = "Harap masukkan password anda"
         }else{
             //if validated
             firebaseSignUp()
