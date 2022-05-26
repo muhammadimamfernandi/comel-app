@@ -94,7 +94,8 @@ class RegisterFragment : Fragment() {
             .addOnSuccessListener {
                     // close loading
                     loading.isDismiss()
-                    database = FirebaseDatabase.getInstance()
+                    database = FirebaseDatabase.getInstance(
+                        "https://comel-app-972f6-default-rtdb.asia-southeast1.firebasedatabase.app")
                     val firebaseUser = auth.currentUser
                     val email = firebaseUser!!.email
                     val uidUser = firebaseUser.uid
@@ -103,6 +104,11 @@ class RegisterFragment : Fragment() {
                         setData.child(uidUser).setValue(user).addOnCompleteListener {
                             Toast.makeText(requireActivity(),
                                 "Pengguna Berhasil Ditambahkan!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }.addOnFailureListener { send ->
+                            Toast.makeText(requireActivity(),
+                                "Pengguna Gagal Ditambahkan! Error : ${send.message}",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
