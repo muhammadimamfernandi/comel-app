@@ -37,4 +37,6 @@
     <string name="username_placeholder">\@jesse_cash</string>
     <string name="chat">Chat</string>
     <string name="mohon_tunggu">Mohon Tunggu</string>
+    <string name="send">Send</string>
+    <string name="post_hint">What\'s on your mind?</string>
 </resources>

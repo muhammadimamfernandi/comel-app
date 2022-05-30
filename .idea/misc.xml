@@ -4,27 +4,38 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/arrow_back.xml" value="0.1465" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/border_top.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/card.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/chat_button.xml" value="0.13" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/custom_black_button.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/custom_bottom_navbar.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/custom_button_black.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/custom_input.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/custom_radio.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_female.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_health.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_home_page.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_male.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_other.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_people.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/ic_settings.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/null_radio.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/picture_placeholder.xml" value="0.1" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/round_corner.xml" value="0.13" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/search_bar.xml" value="0.13" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/drawable/top_border.xml" value="0.1" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_landing.xml" value="0.5" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_community.xml" value="0.22" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_landing.xml" value="0.25" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_register.xml" value="0.25" />
-        <entry key="..\:/Mandiri/comel-app/app/src/main/res/layout/fragment_register.xml" value="0.264" />
-        <entry key="..\:/Mandiri/comel-app/app/src/main/res/layout/fragment_settings.xml" value="0.22826086956521738" />
-        <entry key="..\:/Mandiri/comel-app/app/src/main/res/layout/loading_item.xml" value="0.22826086956521738" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_home.xml" value="0.4" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_landing.xml" value="0.22826086956521738" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_register.xml" value="0.264" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_settings.xml" value="0.22826086956521738" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/fragment_signout.xml" value="0.22826086956521738" />
-        <entry key="..\:/comel-app/app/src/main/res/layout/loading_item.xml" value="0.264" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_settings.xml" value="0.18840579710144928" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_signout.xml" value="0.18840579710144928" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/fragment_story_dialog.xml" value="0.18840579710144928" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/layout/story_dialog.xml" value="0.18840579710144928" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/menu/meni_item.xml" value="0.2" />
+        <entry key="..\:/Kuliah/Mobpro/comel/app/src/main/res/menu/nav_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
