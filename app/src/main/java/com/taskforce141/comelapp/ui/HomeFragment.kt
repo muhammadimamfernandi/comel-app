@@ -34,16 +34,11 @@ class HomeFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
         //Dummy Data post
-        var listPost = mutableListOf(
-            PostData("abcd","efg","abcdefgh"),
-            PostData("abcd","efg","adidas"),
-            PostData("abcd","efg","adidas"),
-            PostData("abcd","efg","adidas"),
-            PostData("abcd","efg","adidas"),
-            PostData("abcd","efg","adidas"),
-            PostData("abcd","efg","adidas"),
-        )
-        adapter = PostAdapter(listPost)
+        var dataPost = ArrayList<PostData>()
+        dataPost.add(PostData("abcd","efg","aku syedih uhuhuuhuh"))
+        dataPost.add(PostData("abcd","efg","abcdefgh"))
+        dataPost.add(PostData("abcd","efg","abcdefgh"))
+        adapter = PostAdapter(dataPost)
         binding.rvPost.adapter = adapter
         binding.rvPost.layoutManager = LinearLayoutManager(requireContext())
 

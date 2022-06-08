@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.taskforce141.comelapp.R
 import com.taskforce141.comelapp.databinding.FragmentPostBinding
 
-class PostAdapter(var dataSource: List<PostData>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
+class PostAdapter(var dataSource: ArrayList<PostData>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
     inner class PostViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var tvContent: TextView = itemView.findViewById(R.id.tvContent);
     }
