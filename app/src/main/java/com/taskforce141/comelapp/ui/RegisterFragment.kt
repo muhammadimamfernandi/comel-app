@@ -99,7 +99,7 @@ class RegisterFragment : Fragment() {
                     val firebaseUser = auth.currentUser
                     val email = firebaseUser!!.email
                     val uidUser = firebaseUser.uid
-                    val user =  User(_name,_username,_email)
+                    val user =  User(_name,_username,_email,"null")
                     val setData = database.getReference("Users")
                         setData.child(uidUser).setValue(user).addOnCompleteListener {
                             Toast.makeText(requireActivity(),
@@ -114,7 +114,7 @@ class RegisterFragment : Fragment() {
                         }
                     Toast.makeText(
                         requireActivity(),
-                        "Akun berhasil dibuat! " + "Selamat Datang ${email}",
+                        "Akun berhasil dibuat! " + "Selamat Datang $email",
                         Toast.LENGTH_SHORT).show()
                     findNavController().navigate(
                         R.id.action_registerFragment_to_homeFragment
