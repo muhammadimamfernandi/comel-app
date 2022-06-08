@@ -9,16 +9,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.taskforce141.comelapp.R
 import com.taskforce141.comelapp.databinding.FragmentHomeBinding
 import com.taskforce141.comelapp.databinding.FragmentPostBinding
 import com.taskforce141.comelapp.models.PostAdapter
 import com.taskforce141.comelapp.models.PostData
+import com.taskforce141.comelapp.models.PostInfo
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var adapter: PostAdapter
+    private lateinit var database: FirebaseDatabase
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,11 +41,26 @@ class HomeFragment : Fragment() {
         dataPost.add(PostData("abcd","efg","aku syedih uhuhuuhuh"))
         dataPost.add(PostData("abcd","efg","abcdefgh"))
         dataPost.add(PostData("abcd","efg","abcdefgh"))
+        //firebase data post
+        sendPost()
         adapter = PostAdapter(dataPost)
         binding.rvPost.adapter = adapter
         binding.rvPost.layoutManager = LinearLayoutManager(requireContext())
 
         navbarBottom()
+    }
+    private fun sendPost(){
+        database = FirebaseDatabase.getInstance(
+            "https://comel-app-972f6-default-rtdb.asia-southeast1.firebasedatabase.app"
+        )
+        val myref = database.reference
+        val uidUser = firebaseAuth.currentUser?.uid
+        val textPost = binding.postTextfield.text.toString()
+        binding.sendButton.setOnClickListener {
+            myref.child("posts").push().setValue(
+                PostInfo(uidUser,textPost)
+            )
+        }
     }
     private fun navbarBottom(){
         //navbar bottom

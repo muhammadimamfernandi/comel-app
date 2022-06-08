@@ -1,15 +1,11 @@
 package com.taskforce141.comelapp.models
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.taskforce141.comelapp.R
-import com.taskforce141.comelapp.databinding.FragmentPostBinding
 
 class PostAdapter(var dataSource: ArrayList<PostData>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
     inner class PostViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
