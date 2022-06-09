@@ -21,6 +21,9 @@ import com.taskforce141.comelapp.databinding.FragmentPostBinding
 import com.taskforce141.comelapp.models.PostAdapter
 import com.taskforce141.comelapp.models.PostData
 import com.taskforce141.comelapp.models.PostInfo
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -42,15 +45,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //initialize firebase auth
         firebaseAuth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance(
-            "https://comel-app-972f6-default-rtdb.asia-southeast1.firebasedatabase.app"
-        )
+        database = FirebaseDatabase.getInstance("https://comel-app-972f6-default-rtdb.asia-southeast1.firebasedatabase.app")
+        //check user is user logged in or not
         checkUser()
-//        //Dummy Data post
-//        var dataPost = ArrayList<PostData>()
-//        dataPost.add(PostData("abcd","efg","aku syedih uhuhuuhuh"))
-//        dataPost.add(PostData("abcd","efg","abcdefgh"))
-//        dataPost.add(PostData("abcd","efg","abcdefgh"))
         //firebase data post
         sendPost()
         //load post from firebase
@@ -65,44 +62,49 @@ class HomeFragment : Fragment() {
         val myref = database.reference
         myref.child("posts").addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                try {
-                    dataPost.clear()
-                    val value = snapshot.value as HashMap<String, Any>
-                    for(key in value.keys){
-                        var postKey = value[key] as HashMap<String, Any>
-                        dataPost.add(
-                            PostData(
-                                key,
-                                postKey["uid"].toString(),
-                                postKey["text"].toString()
-                            )
-                        )
+                val valuePosts = snapshot.children
+                valuePosts.forEach {
+                    var objPosts = it.value as HashMap<*,*>
+                    val getUidUser = objPosts["uid"]
+                    val UsersChild = myref.child("Users").child(getUidUser.toString()).get()
+                    UsersChild.addOnCompleteListener {
+                        var dataUser = snapshot.children
+                        dataUser.forEach {
+                            dataPost.clear()
+                            var data = it.value as HashMap<*,*>
+                            var postDataUser = PostData()
+                            with(postDataUser){
+                                postId = it?.key.toString()
+                                username = data["_username"].toString()
+                                name = data["_name"].toString()
+                                love = false
+                                postText = data["text"].toString()
+                            }
+                            dataPost.add(postDataUser)
+                        }
+                        adapter.notifyDataSetChanged()
                     }
-                    adapter.notifyDataSetChanged()
-                }catch (ex: Exception){
-                    Log.w("tag", "loadPost:onCancelled", ex)
-                    Toast.makeText(requireActivity(),"Postingan Kosong ",
-                        Toast.LENGTH_SHORT).show()
                 }
             }
             override fun onCancelled(error: DatabaseError) {
                 Log.w("tag", "error database $error")
-                Toast.makeText(requireActivity(),"error Database : ${error}",
+                Toast.makeText(requireActivity(),"error Database Posts : ${error}",
                     Toast.LENGTH_SHORT).show()
             }
         })
     }
-
-
     private fun sendPost(){
         val myref = database.reference
         val uidUser = firebaseAuth.currentUser?.uid
          binding.sendButton.setOnClickListener {
             myref.child("posts").push().setValue(
                 PostInfo(uidUser,binding.postTextfield.text.toString())
-            )
-            binding.postTextfield.text.clear()
-
+            ).addOnCompleteListener {
+                binding.postTextfield.text.clear()
+            }.addOnFailureListener {
+                Toast.makeText(requireActivity(),"error Posting Data : ${it.message}",
+                    Toast.LENGTH_SHORT).show()
+            }
         }
     }
     private fun navbarBottom(){

@@ -57,4 +57,6 @@ dependencies {
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:30.0.2')
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    //coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
 }
