@@ -9,7 +9,9 @@ import com.taskforce141.comelapp.R
 
 class PostAdapter(var dataSource: ArrayList<PostData>): RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
     inner class PostViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var tvContent: TextView = itemView.findViewById(R.id.tvContent);
+        var tvContent: TextView = itemView.findViewById(R.id.tvContent)
+        var nameTv: TextView = itemView.findViewById(R.id.nameTv)
+        var usernameTv: TextView = itemView.findViewById(R.id.usernameTv)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -18,8 +20,10 @@ class PostAdapter(var dataSource: ArrayList<PostData>): RecyclerView.Adapter<Pos
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int)  {
+        val currentItem = dataSource[position]
         holder.itemView.apply{
-            holder.tvContent.text = dataSource[position].postText
+            holder.tvContent.text = currentItem.postText
+            holder.nameTv.text = currentItem.userId
         }
     }
 
