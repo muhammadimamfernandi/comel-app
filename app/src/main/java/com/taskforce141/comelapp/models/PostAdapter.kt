@@ -25,8 +25,8 @@ class PostAdapter(var dataSource: ArrayList<PostData>): RecyclerView.Adapter<Pos
         val currentItem = dataSource[position]
         holder.itemView.apply{
             holder.tvContent.text = currentItem.postText
-            holder.nameTv.text = currentItem.name
-            holder.usernameTv.text = currentItem.username
+//            holder.nameTv.text = currentItem.name
+//            holder.usernameTv.text = currentItem.username
 
         }
     }

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -27,6 +28,7 @@ import kotlin.collections.HashMap
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var bindingPost: FragmentPostBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var adapter: PostAdapter
     private lateinit var database: FirebaseDatabase
@@ -38,6 +40,7 @@ class HomeFragment : Fragment() {
     ): View? {
         dataPost = ArrayList()
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+        bindingPost = FragmentPostBinding.inflate(layoutInflater,container,false)
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -55,22 +58,33 @@ class HomeFragment : Fragment() {
         adapter = PostAdapter(dataPost)
         binding.rvPost.adapter = adapter
         binding.rvPost.layoutManager = LinearLayoutManager(requireContext())
+        //handle love
+        bindingPost.loveButton.setOnClickListener {
+            addToFavourite()
+        }
         //navbar bottom
         navbarBottom()
     }
+
+    private fun addToFavourite() {
+
+    }
+
     private fun loadPost(){
+
         val myref = database.reference
         myref.child("posts").addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val valuePosts = snapshot.children
+                    dataPost.clear()
                 valuePosts.forEach {
                     var objPosts = it.value as HashMap<*,*>
                     val getUidUser = objPosts["uid"]
                     val UsersChild = myref.child("Users").child(getUidUser.toString()).get()
                     UsersChild.addOnCompleteListener {
                         var dataUser = snapshot.children
-                        dataUser.forEach {
                             dataPost.clear()
+                        dataUser.forEach {
                             var data = it.value as HashMap<*,*>
                             var postDataUser = PostData()
                             with(postDataUser){
