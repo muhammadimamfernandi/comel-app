@@ -66,24 +66,22 @@ class HomeFragment : Fragment() {
         myref.child("posts").addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 try {
+                    dataPost.clear()
                     val value = snapshot.value as HashMap<String, Any>
-
                     for(key in value.keys){
                         var postKey = value[key] as HashMap<String, Any>
                         dataPost.add(
                             PostData(
                                 key,
-                                postKey["userId"].toString(),
-                                postKey["postText"].toString()
+                                postKey["uid"].toString(),
+                                postKey["text"].toString()
                             )
                         )
-                        Toast.makeText(requireActivity(),"Berhasil Posting! : $postKey",
-                            Toast.LENGTH_SHORT).show()
                     }
                     adapter.notifyDataSetChanged()
                 }catch (ex: Exception){
                     Log.w("tag", "loadPost:onCancelled", ex)
-                    Toast.makeText(requireActivity(),"error Exception : ${ex}",
+                    Toast.makeText(requireActivity(),"Postingan Kosong ",
                         Toast.LENGTH_SHORT).show()
                 }
             }
